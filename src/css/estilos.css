@@ -1,0 +1,227 @@
+/*É importante que quando você for estilizar um item, que utilize um background-color para facilitar a progtamação*/
+/*Responsivo ou responsividade são estilos que se adequam ao tamanho de tela de diferentes dispositivos*/
+body{
+    background-color: #282828;
+    color: #fff;
+}
+
+.cabecalho{
+    height: 80px;
+    background-color: #0b0b0b;
+    display: flex; /*Display flexivel ao tamanho da tela*/
+    justify-content: space-between; /*Alinha os items Horizontalmente*/
+    align-items: center; /*Alinha os items Verticalmente*/
+    padding: 0 80px; /*poem espaçamento ao redor do item (Y, X) pode ser tambem  1 = ^ 2= > 3 = V 4 = < direções*/
+    border-bottom: 1px solid #282828; /*Põem uma pequena linha abaixo*/
+}
+
+.cabecalho .logo{
+    display: flex;
+    gap: 15px; /*Aplica um espaçamento nos items dos filhos*/
+}
+
+.cabecalho .menu{
+    display: flex;
+    gap: 30px;
+}
+
+.cabecalho .menu li a{/*As mudanças serão aplicadas apenas a lista e seus items*/
+    padding: 10px;
+    color: #e8e8e8;
+    font-weight: bolder;
+    font-size: 15px;
+    font-family: 'Chalet'; /*Aspas simples para importar fonte customizada na página html*/
+}
+
+.cabecalho .menu li a:hover{
+    border-bottom: 2px solid #fff;
+    font-size: 20px;
+    transition: all .15s ease-in
+}
+
+.home{
+    display: flex;
+    position: relative;
+    min-height: calc(100vh - 80px); /*Vh = view height - 80 px do cabeçalho*/
+}
+
+.home::after{ /*Efeito de desfoque preto, funcionando como um filtro*/
+    content: '';
+    position: absolute;/*after e before funciona como camadas, utilizando o absolute*/
+    height: 100%; 
+    width: 100%; /*o 100% indica se a imagem vai manter seu tamanho real e ocupar toda área Home*/
+    background: linear-gradient(90deg, rgba(0, 0, 0, .85), rgba(0, 0, 0, .7) 35%, transparent 65%);
+} /*Pode-se utilizar o site css gradiente.io para conseguir o valor acima*/
+
+.home .imagem-fundo{
+    width: 100%;
+    object-fit: cover; /*faz a imagem não perder a proporção e ficar amassada*/
+}
+
+.home .info{
+    position: absolute; /*além de ficar por cima acaba ignorando a formatação lado a lado*/
+    z-index: 1; /*Dá prioridade em questão de camadas em cima ou abaixo*/
+    min-height: calc(100vh - 80px); /*os valores não podem estar juntinhos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    padding: 80px 80px 80px 170px; /*Acima, Direita, Em baixo, Esquerda*/
+    max-width: 780px;
+}
+
+.home .info img{ /*Selecionou apenas a imagem da info*/
+    max-width: 150px;
+}
+
+.home .info .game-list{
+    display: flex;  
+    gap: 32px;
+}
+
+.home .info .titulo{
+    font-family: 'ChaletComprime';
+    font-size: 55px;
+}
+
+.home .info .texto{
+    font-size: 'Chalet';
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.buy-button, .plataform_btn{ /*Ao colocar uma virgula você aplicará os mesmos valores a 2 classes*/
+    background-color: rgba(255, 255, 255, .1);
+    border: 0.5px solid #fff;
+    border-radius: 4px; /*utilizado para arredondar as pontas do quadrado*/
+    font-family: 'ChaletComprime';
+    font-size: 28px;
+    text-align: center;
+    padding: 20px 40px;
+    text-transform: uppercase;
+    width: 50%;
+    transition: all .3s ease-in;
+}
+
+.plataform_btn{
+    color: #fff;
+    width: 100%;
+    cursor: pointer;
+}
+
+.buy-button :hover{
+    background-color: #fff;
+    color: #000;
+}
+
+.buy .cape{
+    width: 270px;
+}
+
+.buy{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+    align-items: center;
+}
+
+.buy .titulo{
+    font-family: 'ChaletComprime';
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.buy .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    width: 50%;
+    border-radius: 10px;
+    padding: 80px;
+    gap: 40px;
+}
+
+.buy .informacoes{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.buy .informacoes h3{
+    font-family: 'ChaletComprime';
+    font-size: 52px;
+    font-weight: 700;
+}
+
+.buy .informacoes p{
+    color: #e8e8e8;
+    font-family: 'Chalet';
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.buy .informacoes .plataformas{
+    display: flex;
+    flex-wrap: wrap; /*Utilizado para quando não haver espaço os items serão quebraddos em linha*/
+    gap: 32px;
+    justify-content: center;
+}
+
+.buy .plataform_btn .plataformas{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s ease-in;
+    display: none;
+    opacity: 0;
+}
+
+.buy .plataform_btn .plataformas.ativo{/*Foi fornecido a essa linha a classe ativo criado no javascript*/
+    display: flex;
+    opacity: 1;
+}
+
+.buy .plataform_btn .plataformas li{
+    padding: 20px;
+}
+
+/*Abaixo se encontra o código de bordas e seu preenchimento quando o cursor esta sobreposto*/
+
+.buy .plataform_btn .plataformas li:nth-child(1){
+    border: 2px solid #00439c;
+}
+.buy .plataform_btn .plataformas li:nth-child(1):hover{
+    background-color: #00439c;
+}
+
+.buy .plataform_btn .plataformas li:nth-child(2){
+    border: 2px solid #00439c;
+}
+.buy .plataform_btn .plataformas li:nth-child(2):hover{
+    background-color: #00439c;
+}
+
+.buy .plataform_btn .plataformas li:nth-child(3){
+    border: 2px solid #387a26;
+}
+.buy .plataform_btn .plataformas li:nth-child(3):hover{
+    background-color: #387a26;
+}
+
+.buy .plataform_btn .plataformas li:nth-child(4){
+    border: 2px solid #387a26;
+}
+.buy .plataform_btn .plataformas li:nth-child(4):hover{
+    background-color: #387a26;
+}
+
+.buy .plataform_btn .plataformas li:nth-child(5){
+    border: 2px solid #fcaf17;
+}
+.buy .plataform_btn .plataformas li:nth-child(5):hover{
+    background-color: #fcaf17;
+}

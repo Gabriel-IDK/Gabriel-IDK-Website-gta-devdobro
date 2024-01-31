@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--O shortcut Alt+Shift+F arruma o código, o deixando organizado-->
+<!--Ctrl+F ferramenta de busca-->
+<!-- Head costuma guardar informações que o usuário não conseguirá ver-->
+
+<head>
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/chalet">
+    <!--O codeigo link importa coisas da internet-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro projeto de progtamação</title>
+    <!-- Aparentemente a linha abaixo troca o icone da pagina da web>-->
+    <link rel="shortcut icon" href="src/images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="./src/css/reset.css"> <!--Conecta o html com o css-->
+    <link rel="stylesheet" href="./src/css/estilos.css">
+    <link rel="stylesheet" href="./src/css/fontes.css">
+    <link rel="stylesheet" href="./src/css/responsivo.css">
+    <!--A Prioridade de estilos é carregado de cima para baixo sendo o arquivo abaixo possuindo a maior prioridade-->
+</head>
+
+<body>
+    <header class="cabecalho">
+
+        <div class="logo">
+            <img src="./src/images/logo-rockstar.svg" alt="">
+            <hr> <!--Hr= Uma linha separatória / quebra-->
+            <img src="./src/images/logo-gta.svg" alt="">
+        </div> <!--Funciona como uma divisão agrupando todos os items acima-->
+
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="#home">Home</a> <!--Ancora, e #home é utilizado para procurar a sessão com esse nome-->
+                </li> <!--Lista de items-->
+
+                <li>
+                    <a href="#buy">Comprar</a>
+                </li>
+
+                <li>
+                    <a href="https://www.youtube.com/@zidang" target="_blank">Suporte <img src="./src/images/icone-link.svg"alt=""></a>
+                    <!--tagert_blank = Abre uma nova aba ao ser clicado-->
+                </li>
+            </ul> <!--Ul = Lista desordenada, Ol = Lista desordenada-->
+        </nav>
+
+    </header>
+
+    <main class="home" id="home">
+        <img class="imagem-fundo" src="./src/images/bg-main.png" alt="">
+
+        <div class="info">
+            <div class="game-list">
+                <img src="./src/images/logo-gta-v.svg" alt="">
+                <img src="./src/images/logo-gta-online.svg" alt="">
+            </div>
+            <h1 class="titulo">JÁ DISPONIVEL NAS LOJAS OBOTICARIO</h1>
+            <p class="texto">COMPATIVEIS COM CONSOLES COMO ATARI E SMART CHINELO</p>
+            <a class="buy-button" href="#buy">COMPRAR POR 4.500$</a>
+        </div>
+    </main>
+
+    <section class="buy" id="buy">
+        <h2 class="titulo">COMPRE JÁ!</h2>
+        <div class="card">
+            <img class="cape" src="./src/images/gta5.jpg" alt="">
+
+            <div class="informacoes">
+                <h3>Grand Theft Auto 5<br>"Rio de Janeiro Edition"</h3>
+
+                <p>
+                    Inclui <strong>Muitos Furros Fedidos</strong> <br> e <strong>Cheirosos Também</strong>
+                </p>
+                <ul class="plataformas"> <!--É possivel utilizar o comando li*(Numero) para já definir a quantidade de items-->
+                    <li><img src="./src/images/logo-ps5.svg" alt=""></li>
+                    <li><img src="./src/images/logo-ps4.svg" alt=""></li>
+                    <li><img src="./src/images/logo-pc.svg" alt=""></li>
+                    <li><img src="./src/images/logo-xbox-one.svg" alt=""></li>
+                    <li><img src="./src/images/logo-xbox-series-s.svg" alt=""></li>
+                </ul>
+            </div>
+
+            <button class="plataform_btn">Selecione a versão do seu ps2
+                <ul class="plataformas">
+                    <li><img src="./src/images/logo-ps5.svg" alt=""></li>
+                    <li><img src="./src/images/logo-ps4.svg" alt=""></li>
+                    <li><img src="./src/images/logo-xbox-one.svg" alt=""></li>
+                    <li><img src="./src/images/logo-xbox-series-s.svg" alt=""></li>
+                    <li><img src="./src/images/logo-pc.svg" alt=""></li>
+                </ul>
+                
+            </button>
+        </div>
+    </section>
+    <script src="./src/js/index.js"></script> 
+    <!--Cripts são postos abaixo do head para primeiro carregar o css e html antes de disponibilizar as funções js-->
+</body>
+
+</html>

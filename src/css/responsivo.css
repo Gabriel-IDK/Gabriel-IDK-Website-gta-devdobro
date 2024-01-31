@@ -1,0 +1,69 @@
+/*Media query é um recurso no css que permite a visualização de recursos em diferentes resoluções*/
+/*Regra será aplicada quando a reslução for igual ou menor que a resolução selecionada*/
+@media (max-width: 1024px) {
+    .cabecalho {
+        justify-content: center;
+        flex-direction: column;
+        padding: 50px 0; /*Vertical, Horizontal*/
+        gap: 15px;
+    } /*O comando acima deixa a os items organizados em colunas quando a tela diminui*/
+
+    .cabecalho .menu li a{
+        padding: 15px;
+    }
+
+    .home .info{
+        padding: 30px;
+    }
+
+    .home .info img{
+        max-width: 100px;
+    }
+
+    .home .info .titulo{
+        font-size: 40px;
+    }
+
+    .buy .card{
+        width: 70%;
+    }
+}
+
+/*A resolução abaixo é muito comum em tablets*/
+@media (max-width: 768px){
+    .buy{
+    padding: 30px;
+    }
+
+    .buy .card{
+        padding: 80px 20px;/*Vertical, Horizontal*/
+        width: 100%;
+    }
+
+    .buy .informacoes h3{
+        font-size: 35px;
+    }
+
+    .buy .informacoes .plataformas{
+        flex-direction: column;
+    }
+
+    .plataform_btn{
+        margin-top: 15px;
+        padding: 15px;
+    }
+
+    .buy-button{
+        width: 100%;
+    }
+}
+
+@media (max-width: 425px){
+    home::after{
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4) 100%, transparent 65%);
+    }
+
+    .buy .card .cape{
+        max-width: 80%;
+    }
+}

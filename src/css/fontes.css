@@ -1,0 +1,5 @@
+@font-face{
+    font-family: "ChaletComprime";
+    src: url("../font/ChaletComprime.ttf");
+}
+/*Comando para importar uma fonte da sua pasta que esta também no <link> html*/
